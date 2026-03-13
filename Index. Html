@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Video Website</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+background:#111;
+color:white;
+text-align:center;
+margin:0;
+}
+
+header{
+background:#ff0000;
+padding:15px;
+font-size:24px;
+font-weight:bold;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:20px;
+}
+
+video{
+width:100%;
+border-radius:10px;
+}
+
+.buttons{
+margin-top:15px;
+}
+
+button,a{
+padding:10px 20px;
+margin:5px;
+border:none;
+border-radius:5px;
+font-size:16px;
+cursor:pointer;
+text-decoration:none;
+}
+
+.like{
+background:#2196F3;
+color:white;
+}
+
+.download{
+background:#4CAF50;
+color:white;
+}
+
+.share{
+background:#FF9800;
+color:white;
+}
+
+.counter{
+margin-top:10px;
+font-size:18px;
+}
+</style>
+</head>
+
+<body>
+
+<header>My Video Hub</header>
+
+<div class="container">
+
+<h2>My First Video</h2>
+
+<video controls>
+<source src="video.mp4" type="video/mp4">
+Your browser does not support video.
+</video>
+
+<div class="buttons">
+
+<button class="like" onclick="likeVideo()">👍 Like</button>
+
+<a class="download" href="video.mp4" download>⬇ Download</a>
+
+<button class="share" onclick="shareVideo()">🔗 Share</button>
+
+</div>
+
+<div class="counter">
+Likes: <span id="likeCount">0</span>
+</div>
+
+</div>
+
+<script>
+
+let likes = 0;
+
+function likeVideo(){
+likes++;
+document.getElementById("likeCount").innerText = likes;
+}
+
+function shareVideo(){
+navigator.clipboard.writeText(window.location.href);
+alert("Video link copied! Share it with friends.");
+}
+
+</script>
+
+</body>
+</html>
